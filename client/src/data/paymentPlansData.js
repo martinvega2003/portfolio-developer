@@ -1,0 +1,63 @@
+export const paymentPlans = [
+    {
+      id: 1,
+      name: "3 Months",
+      price: "$147",
+      monthlyPrice: "49$",
+      monthly: "+$25/mo Hosting",
+      features: [
+        "✅ Design And Development",
+        "✅ Hosting & Domain",
+        "✅ Up to 25 Pages",
+        "✅ Up to 6 Edits Add-on",
+        "✅ +$250 To Add A Blog",
+        "✅ 24/7 Support",
+        "✅ Daily Maintenance",
+        "✅ Backup & Data Security",
+        "✅ Monthly report (site health & basic analytics)",
+      ],
+      buttonText: "Get Started",
+      bgWhite: true,
+    },
+    {
+      id: 2,
+      name: "6 Months",
+      price: "$247",
+      monthlyPrice: "41$",
+      monthly: "+$25/mo Hosting",
+      features: [
+        "✅ Design And Development",
+        "✅ Hosting & Domain",
+        "✅ Unlimited Pages",
+        "✅ Up to 15 Edits Add-on",
+        "✅ +$250 To Add A Blog",
+        "✅ 24/7 Support",
+        "✅ Daily Maintenance",
+        "✅ Backup & Data Security",
+        "✅ Monthly report (site health & basic analytics)",
+      ],
+      buttonText: "Get Started",
+      bgWhite: false,
+    },
+    {
+      id: 3,
+      name: "12 Months + SEO",
+      price: "$997",
+      monthlyPrice: "83$",
+      monthly: "+$25/mo Hosting",
+      features: [
+        "✅ Everything in the 6-Month Plan",
+        "✅ Basic SEO Setup",
+        "✅ On-Page SEO",
+        "✅ Google Search Console & Analytics setup",
+        "✅ Keyword research",
+        "✅ +$250 To Add A Blog",
+        "✅ Fix broken links & redirects",
+        "✅ Sitemap & robots.txt setup",
+        "✅ Up to 30 Edits Add-on"
+      ],
+      buttonText: "Get Started",
+      bgWhite: true,
+    }
+  ];
+  

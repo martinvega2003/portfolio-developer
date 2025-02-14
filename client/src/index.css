@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+  
+/* Stars Effect */
+.stars {
+    width: 100%;
+    height: 100%;
+    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat top center;
+    z-index: 0;
+    animation: move-stars 100s linear infinite;
+  }
+  
+  .twinkling {
+    width: 100%;
+    height: 100%;
+    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png') repeat top center;
+    z-index: 1;
+    animation: move-twinkling 200s linear infinite;
+  }
+
+  /* Dark Theme Animations */
+.shooting-star {
+  background: url('../src/images/asteroid.png') no-repeat;
+  background-size: contain;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 15%;
+  left: 120%;
+  animation: shoot-star 40s linear infinite;
+  opacity: 0.7;
+}
+
+.planet {
+  background: url('../src/images/planet.png') no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 5%;
+  right: -250px;
+  animation: planet-spin 100s linear infinite;
+  opacity: 0.6;
+}
+
+.ufo {
+  background: url('../src/images/ufo.png') no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 80px;
+  position: absolute;
+  top: 30%;
+  left: -200px;
+  animation: ufo-fly 90s linear infinite;
+  opacity: 0.8;
+}
+  
+  @keyframes move-stars {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -10000px 5000px;
+    }
+  }
+  
+  @keyframes move-twinkling {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -10000px 5000px;
+    }
+  }
+
+/* Keyframes for Animations */
+
+@keyframes shoot-star {
+  0% {
+    left: 120%;
+    top: 15%;
+  }
+  100% {
+    left: -20%;
+    top: 100%;
+  }
+}
+
+@keyframes planet-spin {
+  0% {
+    right: -250px;
+  }
+  100% {
+    right: 110%;
+  }
+}
+
+@keyframes ufo-fly {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+/* Light Theme Animations */
+.airplane {
+  background: url('../src/images/plane.png') no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 80px;
+  position: absolute;
+  top: 10%;
+  left: -200px;
+  animation: fly-across 60s linear infinite;
+  opacity: 0.9;
+}
+
+.balloon {
+  background: url('../src/images/balloons.png') no-repeat;
+  background-size: contain;
+  width: 100px;
+  height: 150px;
+  position: absolute;
+  bottom: 10%;
+  left: -200px;
+  animation: float-up 80s linear infinite;
+  opacity: 0.8;
+}
+
+.clouds {
+  background: url('../src/images/clouds-bg.png') no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 20%;
+  right: -250px;
+  animation: clouds-fly 50s linear infinite;
+  opacity: 0.7;
+}
+
+/* Keyframes for Animations */
+@keyframes fly-across {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes float-up {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+@keyframes clouds-fly {
+  0% {
+    right: -250px;
+  }
+  100% {
+    right: 110%;
+  }
+}
