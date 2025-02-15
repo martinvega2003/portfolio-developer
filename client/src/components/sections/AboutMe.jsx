@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import professionalPic from "../../images/professional-pic-transparent.png";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
+import { ExtraDataSection } from "./ExtraDataSection";
 
 const AboutMe = () => {
   const { language } = useLanguage();
@@ -11,21 +12,26 @@ const AboutMe = () => {
   return (
     <div
       id="about"
-      className={`relative z-10 pt-8 overflow-hidden ${
+      className={`relative z-10 pt-20 overflow-hidden ${
         theme === "dark" ? "bg-black text-gray-100" : "bg-white text-gray-900"
       }`}
     >
+      <h2 className={`text-xl sm:text-3xl md:text-6xl text-center ${theme === "dark" ? "text-white" : "text-primary"} mb-4 sm:mb-14 md:mb-20`}>
+        {language === "en" ? "Some Of My Certificates" : "Algunos De Mis Titulos"}
+      </h2>
+      <ExtraDataSection />
 
-      <div>
+      <div className="w-full flex flex-col items-center">
         {/* About Me Text Section */}
         <motion.div
-          className="flex flex-col items-center md:flex-row-reverse md:justify-around md:items-end lg:items-center mt-12 px-3 sm:px-12"
+          className={`w-fit mx-3 sm:mx-12 flex flex-col items-center md:flex-row-reverse md:justify-around my-12 ${theme === "dark" ? "bg-primary shadow-[0_10px_30px_10px_rgba(139,92,246,0.6)]" : "bg-transparent"} `}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
+
           <div
-            className={`relative z-10 w-full md:w-1/2 p-8 ${theme === "dark" ? "bg-primary shadow-[0_10px_30px_10px_rgba(139,92,246,0.6)]" : "shadow-2xl"} rounded-3xl mb-6 md:mb-12 lg:mb-20`}
+            className="relative z-10 w-full md:w-3/5 p-8 rounded-3xl mb-6 md:mb-12 lg:mb-20"
           >
             {/* Header Section with Name */}
             <motion.div
@@ -62,16 +68,16 @@ const AboutMe = () => {
           </div>
           {/* Image or Avatar */}
           <motion.div
-            className="md:w-[40%] h-auto flex justify-center mt-6 md:mt-0"
+            className="w-full md:w-2/5 h-auto flex justify-center p-8 mt-6 md:mt-0"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
           >
             <img
-              src={professionalPic || "https://via.placeholder.com/200"}
+              src={"https://via.placeholder.com/200"}
               alt="Martin Vega"
-              className="relative z-10 w-full h-auto"
+              className={`relative z-10 w-full h-auto rounded-xl border-2 ${theme === "dark" ? "border-purple-500" : "border-primary"} `}
             />
           </motion.div>
         </motion.div>
@@ -80,7 +86,7 @@ const AboutMe = () => {
         <motion.div
           className={`min-w-full py-24 text-center ${
             theme === "dark"
-              ? "relative z-10 bg-gray-800 text-white"
+              ? "relative z-10 bg-gray-950 text-white"
               : "bg-primary text-white"
           }`}
           initial={{ opacity: 0 }}

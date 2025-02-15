@@ -12,7 +12,7 @@ function App() {
   return (
     <LanguageProvider>
       <ThemeProvider>
-        <BrowserRouter>
+        <BrowserRouter> 
           <Header />
           <ScrollToTop />
           {/* Background Image Layer */}

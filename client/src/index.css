@@ -57,6 +57,21 @@
   animation: ufo-fly 90s linear infinite;
   opacity: 0.8;
 }
+
+.moon {
+  background: url('../src/images/Moon.png') no-repeat center center;
+  background-size: contain;
+  width: 300px;
+  height: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  pointer-events: none;
+  animation: parallax-moon 10s ease-in-out infinite alternate;
+}
+
   
   @keyframes move-stars {
     from {
@@ -104,6 +119,15 @@
   }
   100% {
     left: 110%;
+  }
+}
+
+@keyframes parallax-moon {
+  0% {
+    transform: translate(-48%, -52%);
+  }
+  100% {
+    transform: translate(-52%, -48%);
   }
 }
 

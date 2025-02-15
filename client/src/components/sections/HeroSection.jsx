@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
-import heroImg from "../../images/hero-image-v1.png";
+import heroImg from "../../images/hero-image-v2.png";
 import trees from "../../images/black-trees.png"
 import clouds from "../../images/clouds.png"
 
 const HeroSection = () => {
   const { language } = useLanguage();
   const { theme } = useTheme();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const moon = document.querySelector('.moon');
+      if (moon) {
+        moon.style.transform = `translate(-50%, calc(-50% + ${scrollPosition * 0.2}px))`;
+      }
+    };
+  
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <motion.div

@@ -1,5 +1,5 @@
 import { FaClock, FaChartLine, FaLaptopCode } from "react-icons/fa";
-import image from "../../images/hero-image-v2.png";
+import image from "../../images/hero-image-v1.png";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 import { motion } from "framer-motion";
