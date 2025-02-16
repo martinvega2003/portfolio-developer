@@ -1,4 +1,4 @@
-import { FaClock, FaChartLine, FaLaptopCode } from "react-icons/fa";
+import { FaDatabase, FaServer, FaLaptopCode } from "react-icons/fa";
 import image from "../../images/hero-image-v1.png";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
@@ -21,74 +21,75 @@ const MyServiceSection = () => {
 
   const content = {
     en: {
-      title: "Why You Need My Skills",
+      title: "How I Can Help You",
       description:
-        "Your team deserves a developer who can efficiently solve complex problems, enhance productivity, and adapt to dynamic project needs. Here’s how I can contribute:",
+        "Your projects deserve seamless user experiences, efficient back-end systems, and reliable database solutions. Here’s how my skills can benefit you:",
       points: [
-        {
-          icon: <FaChartLine className="text-accent w-10 h-10 shrink-0" />,
-          text: (
-            <>
-              <strong>Boost Team Productivity: </strong> 
-              By writing clean, maintainable code, I help accelerate development cycles and reduce technical debt.
-            </>
-          ),
-        },
-        {
-          icon: <FaClock className="text-accent w-10 h-10 shrink-0" />,
-          text: (
-            <>
-              <strong>Efficient Problem Solver: </strong> 
-              I quickly identify and resolve issues, minimizing downtime and keeping projects on track.
-            </>
-          ),
-        },
         {
           icon: <FaLaptopCode className="text-accent w-10 h-10 shrink-0" />,
           text: (
             <>
-              <strong>Technical Expertise: </strong> 
-              With proficiency in React, Django, and PostgreSQL, I bring robust solutions to complex challenges.
+              <strong>Frontend: </strong> 
+              Using React and TailwindCSS, you’ll get responsive and visually appealing interfaces that enhance user engagement.
+            </>
+          ),
+        },
+        {
+          icon: <FaServer className="text-accent w-10 h-10 shrink-0" />,
+          text: (
+            <>
+              <strong>Backend: </strong> 
+              With ExpressJS, your applications will have scalable and secure APIs, ensuring smooth communication and data flow.
+            </>
+          ),
+        },
+        {
+          icon: <FaDatabase className="text-accent w-10 h-10 shrink-0" />,
+          text: (
+            <>
+              <strong>Databases: </strong> 
+              You’ll benefit from optimized SQL queries and PLSQL scripts with PostgreSQL, guaranteeing fast and reliable data management.
             </>
           ),
         },
       ],
     },
     es: {
-      title: "Por Qué Necesitas Mis Habilidades",
+      title: "Cómo Puedo Ayudarte",
       description:
-        "Tu equipo merece un desarrollador que pueda resolver problemas complejos de manera eficiente, mejorar la productividad y adaptarse a las necesidades dinámicas de los proyectos. Así es como puedo contribuir:",
+        "Tus proyectos merecen experiencias de usuario fluidas, sistemas backend eficientes y soluciones de base de datos confiables. Así es como mis habilidades pueden beneficiarte:",
       points: [
-        {
-          icon: <FaChartLine className="text-accent w-10 h-10 shrink-0" />,
-          text: (
-            <>
-              <strong>Aumenta la Productividad del Equipo: </strong> 
-              Al escribir código limpio y mantenible, ayudo a acelerar los ciclos de desarrollo y reducir la deuda técnica.
-            </>
-          ),
-        },
-        {
-          icon: <FaClock className="text-accent w-10 h-10 shrink-0" />,
-          text: (
-            <>
-              <strong>Resolución Eficiente de Problemas: </strong> 
-              Identifico y resuelvo problemas rápidamente, minimizando tiempos de inactividad y manteniendo los proyectos en marcha.
-            </>
-          ),
-        },
         {
           icon: <FaLaptopCode className="text-accent w-10 h-10 shrink-0" />,
           text: (
             <>
-              <strong>Experiencia Técnica: </strong> 
-              Con experiencia en React, Django y PostgreSQL, ofrezco soluciones sólidas a desafíos complejos.
+              <strong>Frontend: </strong> 
+              Utilizando React y TailwindCSS, obtendrás interfaces receptivas y visualmente atractivas que mejoran la interacción del usuario.
+            </>
+          ),
+        },
+        {
+          icon: <FaServer className="text-accent w-10 h-10 shrink-0" />,
+          text: (
+            <>
+              <strong>Backend: </strong> 
+              Con ExpressJS, tus aplicaciones contarán con APIs escalables y seguras, garantizando una comunicación fluida y segura.
+            </>
+          ),
+        },
+        {
+          icon: <FaDatabase className="text-accent w-10 h-10 shrink-0" />,
+          text: (
+            <>
+              <strong>Bases de Datos: </strong> 
+              Te beneficiarás de consultas SQL optimizadas y scripts PLSQL con PostgreSQL, asegurando una gestión de datos rápida y confiable.
             </>
           ),
         },
       ],
     },
   };
+  
 
   const { title, description, points } = content[language];
 

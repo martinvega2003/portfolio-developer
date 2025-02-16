@@ -17,7 +17,7 @@ const BenefitsSection = () => {
 
   const content = {
     en: {
-      title: "Why I’m a Valuable Addition to Your Team",
+      title: "Technical & Bland Skills",
       description:
         "I bring a combination of technical expertise, problem-solving abilities, and a strong work ethic. My goal is to contribute effectively, collaborate with teams, and continuously improve. Here’s what I offer as an employee:",
       skills: [
@@ -60,7 +60,7 @@ const BenefitsSection = () => {
       ],
     },
     es: {
-      title: "Por qué soy una adición valiosa para tu equipo",
+      title: "Habilidades Tecnicas y Blandas",
       description:
         "Aporto una combinación de conocimientos técnicos, habilidades de resolución de problemas y una gran ética de trabajo. Mi objetivo es contribuir eficazmente, colaborar con equipos y mejorar continuamente. Esto es lo que ofrezco como empleado:",
       skills: [
@@ -133,8 +133,8 @@ const BenefitsSection = () => {
         )}
       </div>
       <div className="relative max-w-6xl mx-auto px-6 text-center z-10">
-        <h2 className={`text-4xl font-bold ${theme === "dark" ? "text-white" : "text-accent"} mb-6`}>{title}</h2>
-        <p className={`text-lg ${theme === "dark" ? "text-gray-200" : "text-gray-600"} mb-12`}>{description}</p>
+        <h2 className={`text-xl sm:text-4xl font-bold ${theme === "dark" ? "text-white" : "text-accent"} mb-6`}>{title}</h2>
+        <p className={`text-md sm:text-lg ${theme === "dark" ? "text-gray-200" : "text-gray-600"} mb-12`}>{description}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <div

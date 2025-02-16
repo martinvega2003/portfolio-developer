@@ -16,9 +16,6 @@ const AboutMe = () => {
         theme === "dark" ? "bg-black text-gray-100" : "bg-white text-gray-900"
       }`}
     >
-      <h2 className={`text-xl sm:text-3xl md:text-6xl text-center ${theme === "dark" ? "text-white" : "text-primary"} mb-4 sm:mb-14 md:mb-20`}>
-        {language === "en" ? "Some Of My Certificates" : "Algunos De Mis Titulos"}
-      </h2>
       <ExtraDataSection />
 
       <div className="w-full flex flex-col items-center">

@@ -1,30 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
+import { FaCopy } from "react-icons/fa";
 import heroImg from "../../images/hero-image-v2.png";
-import trees from "../../images/black-trees.png"
-import clouds from "../../images/clouds.png"
+import trees from "../../images/black-trees.png";
+import clouds from "../../images/clouds.png";
 
 const HeroSection = () => {
   const { language } = useLanguage();
   const { theme } = useTheme();
+  const [copied, setCopied] = useState(false);
+  const myEmail = "martinvega2003.02@gmail.com"
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const moon = document.querySelector('.moon');
+      const moon = document.querySelector(".moon");
       if (moon) {
-        moon.style.transform = `translate(-50%, calc(-50% + ${scrollPosition * 0.2}px))`;
+        moon.style.transform = `translate(-50%, calc(-50% + ${
+          scrollPosition * 0.2
+        }px))`;
       }
     };
-  
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(myEmail);
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
 
   return (
     <motion.div
@@ -38,54 +51,61 @@ const HeroSection = () => {
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      {/* Background Animations */}
-      {theme === "light" && (
-        <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
-          <div className="stars"></div>
-          <div className="twinkling"></div>
-          <div className="airplane"></div>
-          <div className="balloon"></div>
-          <div className="clouds"></div>
-        </div>
-      )}
-      {theme === "dark" && (
-        <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
-          <div className="stars"></div>
-          <div className="twinkling"></div>
-          <div className="shooting-star"></div>
-          <div className="planet"></div>
-          <div className="ufo"></div>
-        </div>
-      )}
-
-
       <div className="w-full px-3 sm:px-20 relative">
-        <motion.div
-          className="absolute left-0 right-0 top-0 flex justify-center items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.2 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          <div className="w-16 h-16 bg-accent rounded-full absolute left-0 sm:-left-8"></div>
-          <div className="w-16 h-16 bg-accent rounded-full absolute right-0 sm:-right-8"></div>
-          <div className="h-[2px] w-full bg-accent"></div>
-        </motion.div>
-
         <div className="w-full flex flex-col md:flex-row justify-start items-center">
           <div className="w-full md:w-1/2 text-center md:text-left mb-9 md:mb-0">
+            {/* Email Section */}
+            <div className="flex items-center gap-2 justify-center md:justify-start">
+              <span className="text-sm md:text-md text-gray-100 font-semibold">
+                {myEmail}
+              </span>
+              <button
+                onClick={handleCopy}
+                className="text-gray-100 hover:text-accent transition-colors"
+                title="Copy Email"
+              >
+                <FaCopy />
+              </button>
+            </div>
+            {copied && (
+              <span className="text-xs text-green-400 mt-1 block">
+                Copied!
+              </span>
+            )}
+
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl text-white font-extrabold font-heading leading-tight mt-8 relative transition-all duration-300"
+              className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl text-white font-extrabold font-heading leading-tight mt-4 relative transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
             >
               {language === "en" ? (
                 <>
-                  Bring <span className={theme === "dark" ? "text-blue-400" : "text-blue-800"}>Your Ideas</span> To Life
+                  Bring{" "}
+                  <span
+                    className={
+                      theme === "dark"
+                        ? "text-blue-400"
+                        : "text-blue-800"
+                    }
+                  >
+                    Your Ideas
+                  </span>{" "}
+                  To Life
                 </>
               ) : (
                 <>
-                  Haz <span className={theme === "dark" ? "text-blue-400" : "text-blue-800"}>Tus Ideas</span> Realidad
+                  Haz{" "}
+                  <span
+                    className={
+                      theme === "dark"
+                        ? "text-blue-400"
+                        : "text-blue-800"
+                    }
+                  >
+                    Tus Ideas
+                  </span>{" "}
+                  Realidad
                 </>
               )}
             </motion.h1>
@@ -102,31 +122,6 @@ const HeroSection = () => {
                 ? "I build React apps with modern technologies like Tailwind CSS and PostgreSQL, delivering on time."
                 : "Creo aplicaciones React con tecnologías modernas como Tailwind CSS y PostgreSQL, entregando a tiempo."}
             </motion.p>
-
-            <div className="relative z-20 w-full flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center md:justify-start items-center">
-              <button
-                className={`mt-8 w-64 py-3 text-sm md:text-md font-semibold border-2 shadow-lg hover:scale-110 transition duration-200 ${
-                  theme === "dark"
-                    ? "text-primary bg-white hover:bg-transparent hover:text-white border-white"
-                    : "text-accent bg-white hover:bg-transparent hover:text-white border-white"
-                }`}
-              >
-                <Link to="form/">
-                  {language === "en" ? "Work Together" : "Trabajemos"}
-                </Link>
-              </button>
-              <button
-                className={`sm:mt-8 w-64 py-3 text-sm md:text-md font-semibold border-2 shadow-lg hover:scale-110 transition duration-200 ${
-                  theme === "dark"
-                    ? "text-white bg-transparent hover:bg-white hover:text-primary border-white"
-                    : "text-white bg-transparent hover:bg-white hover:text-accent border-white"
-                }`}
-              >
-                <a href="#examples">
-                  {language === "en" ? "See My Work" : "Ver Mi Trabajo"}
-                </a>
-              </button>
-            </div>
           </div>
 
           <div className="w-full md:w-1/2 flex justify-center items-center">
@@ -134,10 +129,18 @@ const HeroSection = () => {
           </div>
         </div>
         {theme === "dark" && (
-          <img className="absolute z-10 -bottom-40 md:-bottom-96 left-0 right-0 min-w-full h-auto" src={trees} alt="" />
+          <img
+            className="absolute z-10 -bottom-40 md:-bottom-96 left-0 right-0 min-w-full h-auto"
+            src={trees}
+            alt=""
+          />
         )}
         {theme === "light" && (
-          <img className="absolute z-10 -bottom-40 md:-bottom-96 left-0 right-0 min-w-full h-auto" src={clouds} alt="" />
+          <img
+            className="absolute z-10 -bottom-40 md:-bottom-96 left-0 right-0 min-w-full h-auto"
+            src={clouds}
+            alt=""
+          />
         )}
       </div>
     </motion.div>
