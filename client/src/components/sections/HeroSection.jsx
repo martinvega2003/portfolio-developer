@@ -51,6 +51,25 @@ const HeroSection = () => {
       viewport={{ once: true }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
+      {/* Background Animations */}
+      {theme === "light" && (
+        <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+          <div className="stars"></div>
+          <div className="twinkling"></div>
+          <div className="airplane"></div>
+          <div className="balloon"></div>
+          <div className="clouds"></div>
+        </div>
+      )}
+      {theme === "dark" && (
+        <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
+          <div className="stars"></div>
+          <div className="twinkling"></div>
+          <div className="shooting-star"></div>
+          <div className="planet"></div>
+          <div className="ufo"></div>
+        </div>
+      )}
       <div className="w-full px-3 sm:px-20 relative">
         <div className="w-full flex flex-col md:flex-row justify-start items-center">
           <div className="w-full md:w-1/2 text-center md:text-left mb-9 md:mb-0">

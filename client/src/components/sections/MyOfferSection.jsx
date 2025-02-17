@@ -3,6 +3,10 @@ import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
+import cvImgLightModeEn from "../../images/Professional Web Developer Resume no-bg.png"
+import cvImgLightModeEs from "../../images/Professional Web Developer Resume no-bg es.png"
+import cvImgDarkModeEn from "../../images/Professional Web Developer Resume no-bg white-text.png"
+import cvImgDarkModeEs from "../../images/Professional Web Developer Resume no-bg white-text es.png"
 
 const MyOfferSection = () => {
   const { language } = useLanguage();
@@ -78,45 +82,92 @@ const MyOfferSection = () => {
       </div>
 
       <div className="flex justify-center md:justify-start items-center md:items-end">
-        <div className={`${theme === "dark" ? "bg-primary/90" : "bg-white/80"} p-8 w-[95%] sm:w-[90%] md:max-w-[60%] flex flex-col items-start justify-center shadow-2xl rounded-lg border-2 border-primary md:shadow-none md:rounded-none md:border-none`}>
-          {/* Left Side: Text Content */}
-          <motion.div
-            className="mb-4"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={leftTextVariants}
-          >
-            <p className={`text-sm sm:text-md italic font-light mb-4 ${theme === "dark" ? "text-gray-200" : "text-accent"} border-b-2 border-accent`}>{language === 'en' ? "What I Offer" : "Lo que ofrezco"}</p>
-            <h1 className={`text-xl sm:text-3xl xl:text-5xl font-extrabold ${theme === "dark" ? "text-white" : "text-primary"} mb-4`}>{title}</h1>
-            <p className={`text-sm sm:text-md xl:text-lg leading-relaxed ${theme === "dark" ? "text-gray-200" : "text-secondary"}`}>{description}</p>
-            <div className="w-full border-t-2 border-accent my-6"></div>
-          </motion.div>
+        <div className={`${theme === "dark" ? "bg-primary/90" : "bg-white/80"} w-[95%] sm:w-[90%] md:max-w-[80%] lg:max-w-[60%] flex flex-col items-start justify-center shadow-2xl rounded-lg border-2 border-primary md:shadow-none md:rounded-none md:border-none`}>
+          <div className="min-h-screen w-full flex flex-col justify-center items-start bg-transparent py-12 px-6">
+            <p className={`w-full text-sm sm:text-md italic font-light mb-4 ${theme === "dark" ? "text-gray-200 border-cyan-300" : "text-primary border-accent"} border-b-2`}>{language === 'en' ? "My Curriculum Vitae" : "Mi Curriculum Vitae"}</p>
+            <div className="max-w-4xl w-full flex flex-col md:flex-row gap-8">
+              {/* Left Section - Profile and Contact Info */}
+              <div className="w-full md:w-1/2">
+                <div className="bg-gray-800 rounded-xl w-full md:w-2/3 aspect-square mb-6"></div>
+                <div className={`${theme === "dark" ? "text-cyan-300 border-cyan-300" : "text-accent border-accent"} text-lg font-bold border-l-4 pl-4`}>{language === "en" ? "Contact Info" : "Contacto"}</div>
+                <ul className={`${theme === "dark" ? "text-white" : "text-primary"} mt-2 space-y-2`}>
+                  <li>📞 +555 555 555555</li>
+                  <li>✉️ martinvega2008.02@gmail.com</li>
+                  <li>🌐 placeholder.web</li>
+                </ul>
+                <div className={`${theme === "dark" ? "text-cyan-300 border-cyan-300" : "text-accent border-accent"} text-lg font-bold mt-6 border-l-4 pl-4`}>{language === "en" ? "Education" : "Educacion"}</div>
+                <ul className={`${theme === "dark" ? "text-white" : "text-primary"} mt-2 space-y-1`}>
+                  <li>{language === "en" ? "Computer Science University" : "Universidad - Ingenieria Informatica"}<br />2022 – {language === "en" ? "today" : "presente"}</li>
+                  <li>{language === "en" ? "Senior High School" : "Bachillerato"}<br />2019 – 2021</li>
+                  <li>{language === "en" ? "Junior High School" : "Educacion Media"}<br />2016 – 2018</li>
+                  <li>{language === "en" ? "Primary School" : "Educacion Basica"}<br />2009 – 2015</li>
+                </ul>
+                <div className={`${theme === "dark" ? "text-cyan-300 border-cyan-300" : "text-accent border-accent"} text-lg font-bold mt-6 border-l-4 pl-4`}>{language === "en" ? "Skills" : "Habilidades"}</div>
+                <ul className={`${theme === "dark" ? "text-white" : "text-primary"} mt-2 space-y-1`}>
+                  <li>{language === "en" ? "Frontend Development - High" : "Desarrollo Frontend - Alto"}</li>
+                  <li>{language === "en" ? "Backend Development - Medium" : "Desarrollo Backend - Medio"}</li>
+                  <li>{language === "en" ? "Databases - Medium" : "Bases de Datos - Medio"}</li>
+                </ul>
+              </div>
 
-          {/* Bottom Side: Bullet Points */}
-          <motion.div
-            className="flex items-start"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            <div className="w-full flex flex-col md:flex-row justify-start items-start flex-wrap">
-              {benefits.map((item, index) => (
-                <motion.div
-                  key={index}
-                  variants={bulletPointVariants}
-                  custom={index}
-                  className="w-full lg:w-[45%] flex items-start rounded-3xl py-3 my-3 mr-3 lg:mr-6"
-                >
-                  <FaCheckCircle className={`min-w-7 min-h-7 text-blue-400 mr-3 mt-1`} />
-                  <div className="w-full">
-                    <h3 className={`font-bold text-xl ${theme === "dark" ? "text-white" : "text-primary"}`}>{item.title}</h3>
-                    <p className={`${theme === "dark" ? "text-gray-200" : "text-secondary"}  text-sm xl:text-lg`}>{item.text}</p>
-                  </div>
-                </motion.div>
-              ))}
+              {/* Right Section - Profile and Experience */}
+              <div className="w-full md:w-1/2">
+                <h1 className={`text-4xl font-bold ${theme === "dark" ? "text-white" : "text-primary"}`}>Martin Vega</h1>
+                <h2 className={`${theme === "dark" ? "text-cyan-300" : "text-accent"} text-2xl`}>{language === "en" ? "Web Developer" : "Desarrollador Web"}</h2>
+                <p className={`${theme === "dark" ? "text-white" : "text-primary"} mt-4`}>
+                  {language === "en" ? 
+                    <>
+                      Hello, I’m Martin Vega, a web developer looking for his first experience in the field. I have been learning coding since 2020.
+                      I consider myself decently practiced with Frontend Development (React & TailwindCSS) and really knowledgeable in backend development and SQL/NoSQL queries (Python, ExpressJS, PostgreSQL).
+                    </> :
+                    <>
+                      Hola! Soy Martin Vega, Desarrollador Web que busca su primera experiencia en el Area. Estoy aprendiendo a escribir coding desde 2020. 
+                      Me considero extremadamente competente en desarrollo frontend (React y TailwindCSS) y bastante entendido en el desarrollo backend y querys a base de datos (ExpressJS y PostgreSQL).  
+                    </>
+                  }
+                </p>
+                <div className={`${theme === "dark" ? "text-cyan-300 border-cyan-300" : "text-accent border-accent"} text-lg font-bold mt-8 border-l-4 pl-4`}>{language === "en" ? "Work Experience" : "Experiencia Laboral"}</div>
+                <ul className={`${theme === "dark" ? "text-white" : "text-primary"} mt-4 space-y-4`}>
+                  <li>
+                    <span className="font-bold">{language === "en" ? "Administrative Role Rieder S.A." : "Rol Administrativo Rieder S.A."}</span><br />
+                    <span className="text-sm italic font-extralight">{language === "en" ? "6 Months in 2024" : "6 Meses en 2024"}</span><br />
+                    {language === "en" ? 
+                      <>
+                        I learnt to work in teams, manage my time, communicate and to administrate the financial aspects of the company.
+                      </> :
+                      <>
+                        Aprendi a trabajar en equipo, comunicarme, manejar mi tiempo y a administrar los aspectos financieros de la compañía.
+                      </> 
+                    }
+                  </li>
+                  <li>
+                    <span className="font-bold">{language === "en" ? "Administrative Role Confirming +" : "Rol Administrativo Confirming +"}</span><br />
+                    <span className="text-sm italic font-extralight">{language === "en" ? "6 Months in 2024" : "6 Meses en 2024"}</span><br />
+                    {language === "en" ? 
+                      <>
+                        I primarily managed the bills of the company using many software tools while doing this.
+                      </> :
+                      <>
+                        Principalmente administre las facturas de la compañía utilizando diversos softwares.
+                      </> 
+                    }
+                  </li>
+                </ul>
+              </div>
             </div>
-          </motion.div>
+            <div className="relative z-10 w-full py-8 flex items-center justify-between">
+              <button 
+                className={`w-1/3 ${theme === "dark" ? "bg-white text-black hover:text-white border-2 border-white" : "bg-black text-white hover:text-black border-2 border-black"} hover:bg-transparent p-2 rounded-lg transition duration-300`}
+              >
+                Download CV In English
+              </button>
+              <button 
+                className={`w-1/3 ${theme === "dark" ? "bg-cyan-300 text-primary hover:text-cyan-300 border-cyan-300" : "bg-accent text-white hover:text-accent border-accent"} hover:bg-transparent p-2 border-2 rounded-lg transition duration-300`}
+              >
+                Descargar CV En Español
+              </button>
+            </div>
+          </div>
         </div>
         <div className="w-[15%] hidden lg:block"></div>
       </div>
