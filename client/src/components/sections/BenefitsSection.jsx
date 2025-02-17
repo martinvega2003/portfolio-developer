@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  FaLightbulb,
-  FaLaptopCode,
-  FaUsers,
-  FaDatabase,
-  FaChartLine,
-  FaBook,
-} from "react-icons/fa";
-import { motion } from "framer-motion";
+import { FaUsers, FaBook, FaLightbulb, FaComments, FaChartLine, FaClock } from 'react-icons/fa';
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -17,92 +9,93 @@ const BenefitsSection = () => {
 
   const content = {
     en: {
-      title: "Technical & Bland Skills",
+      title: "Soft Skills",
       description:
-        "I bring a combination of technical expertise, problem-solving abilities, and a strong work ethic. My goal is to contribute effectively, collaborate with teams, and continuously improve. Here’s what I offer as an employee:",
+        "My goal is to contribute effectively, collaborate with teams, and continuously improve. This is what I commit myself to deliver to you as an employee:",
       skills: [
         {
-          title: "Strong Problem-Solving Skills",
+          title: "Team Collaboration",
           description:
-            "I analyze and resolve technical challenges efficiently, improving code quality and optimizing performance.",
-          icon: <FaLightbulb size={40} />,
+            "I actively engage with team members, communicate clearly, and contribute to a positive and productive work environment.",
+          icon: <FaUsers size={40} />,
         },
         {
           title: "Adaptability & Continuous Learning",
           description:
-            "I quickly learn new technologies and adapt to different projects, always striving for growth and improvement.",
+            "I am committed to learning new technologies and quickly adapting to changing project requirements and work environments.",
           icon: <FaBook size={40} />,
         },
         {
-          title: "Team Collaboration",
+          title: "Problem-Solving",
           description:
-            "I work well in teams, communicate clearly, and contribute to a positive and productive work environment.",
-          icon: <FaUsers size={40} />,
+            "I approach challenges with creativity and logic, ensuring efficient solutions that enhance productivity and project success.",
+          icon: <FaLightbulb size={40} />,
         },
         {
-          title: "Efficient Code & Best Practices",
+          title: "Communication Skills",
           description:
-            "I write clean, maintainable, and scalable code, following industry standards to ensure long-term project success.",
-          icon: <FaLaptopCode size={40} />,
-        },
-        {
-          title: "Backend & Database Knowledge",
-          description:
-            "I have solid experience working with Django and PostgreSQL, ensuring smooth and reliable data management.",
-          icon: <FaDatabase size={40} />,
+            "I communicate ideas clearly and listen actively, ensuring effective collaboration and understanding within the team.",
+          icon: <FaComments size={40} />,
         },
         {
           title: "Proactive & Self-Motivated",
           description:
-            "I take initiative in solving problems and improving processes without needing constant supervision.",
+            "I take initiative and stay motivated to contribute to team goals and improve processes without requiring constant supervision.",
           icon: <FaChartLine size={40} />,
+        },
+        {
+          title: "Time Management",
+          description:
+            "I prioritize tasks efficiently, meeting deadlines while maintaining high-quality deliverables.",
+          icon: <FaClock size={40} />,
         },
       ],
     },
     es: {
-      title: "Habilidades Tecnicas y Blandas",
+      title: "Habilidades Blandas",
       description:
-        "Aporto una combinación de conocimientos técnicos, habilidades de resolución de problemas y una gran ética de trabajo. Mi objetivo es contribuir eficazmente, colaborar con equipos y mejorar continuamente. Esto es lo que ofrezco como empleado:",
+        "Mi objetivo es contribuir eficazmente, colaborar con equipos y mejorar continuamente. Esto es lo que me comprometo a entregarte como empleado:",
       skills: [
         {
-          title: "Habilidades Fuertes para Resolver Problemas",
+          title: "Colaboración en Equipo",
           description:
-            "Analizo y resuelvo desafíos técnicos de manera eficiente, mejorando la calidad del código y optimizando el rendimiento.",
-          icon: <FaLightbulb size={40} />,
+            "Me involucro activamente con los miembros del equipo, me comunico con claridad y contribuyo a un entorno de trabajo positivo y productivo.",
+          icon: <FaUsers size={40} />,
         },
         {
           title: "Adaptabilidad y Aprendizaje Continuo",
           description:
-            "Aprendo rápidamente nuevas tecnologías y me adapto a diferentes proyectos, siempre buscando crecer y mejorar.",
+            "Estoy comprometido a aprender nuevas tecnologías y adaptarme rápidamente a los cambios en los requisitos del proyecto y entornos laborales.",
           icon: <FaBook size={40} />,
         },
         {
-          title: "Colaboración en Equipo",
+          title: "Resolución de Problemas",
           description:
-            "Trabajo bien en equipo, me comunico de manera clara y contribuyo a un ambiente de trabajo positivo y productivo.",
-          icon: <FaUsers size={40} />,
+            "Enfrento los desafíos con creatividad y lógica, asegurando soluciones eficientes que mejoran la productividad y el éxito del proyecto.",
+          icon: <FaLightbulb size={40} />,
         },
         {
-          title: "Código Eficiente y Mejores Prácticas",
+          title: "Habilidades de Comunicación",
           description:
-            "Escribo código limpio, mantenible y escalable, siguiendo estándares de la industria para garantizar el éxito a largo plazo.",
-          icon: <FaLaptopCode size={40} />,
+            "Comunico ideas de manera clara y escucho activamente, garantizando una colaboración y entendimiento efectivos dentro del equipo.",
+          icon: <FaComments size={40} />,
         },
         {
-          title: "Experiencia en Backend y Bases de Datos",
+          title: "Proactividad y Motivación Propia",
           description:
-            "Tengo experiencia sólida trabajando con Django y PostgreSQL, asegurando una gestión de datos fluida y confiable.",
-          icon: <FaDatabase size={40} />,
-        },
-        {
-          title: "Proactivo y Autodidacta",
-          description:
-            "Tomo la iniciativa para resolver problemas y mejorar procesos sin necesidad de supervisión constante.",
+            "Tomo la iniciativa y me mantengo motivado para contribuir a los objetivos del equipo y mejorar procesos sin requerir supervisión constante.",
           icon: <FaChartLine size={40} />,
+        },
+        {
+          title: "Gestión del Tiempo",
+          description:
+            "Priorizo tareas de manera eficiente, cumpliendo plazos mientras mantengo entregables de alta calidad.",
+          icon: <FaClock size={40} />,
         },
       ],
     },
   };
+  
 
   const { title, description, skills } = content[language];
 
@@ -132,9 +125,9 @@ const BenefitsSection = () => {
           </div>
         )}
       </div>
-      <div className="relative max-w-6xl mx-auto px-6 text-center z-10">
+      <div className="relative max-w-6xl mx-auto px-6 text-center z-10 flex flex-col items-center">
         <h2 className={`text-xl sm:text-4xl font-bold ${theme === "dark" ? "text-white" : "text-accent"} mb-6`}>{title}</h2>
-        <p className={`text-md sm:text-lg ${theme === "dark" ? "text-gray-200" : "text-gray-600"} mb-12`}>{description}</p>
+        <p className={`w-3/5 text-md sm:text-lg ${theme === "dark" ? "text-gray-200" : "text-gray-600"} mb-12`}>{description}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <div

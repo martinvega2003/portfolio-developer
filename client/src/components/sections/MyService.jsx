@@ -23,14 +23,14 @@ const MyServiceSection = () => {
     en: {
       title: "How I Can Help You",
       description:
-        "Your projects deserve seamless user experiences, efficient back-end systems, and reliable database solutions. Here’s how my skills can benefit you:",
+        "Your projects deserve seamless user experiences, efficient back-end systems, and reliable database solutions. Here are my skills in these fields:",
       points: [
         {
           icon: <FaLaptopCode className="text-accent w-10 h-10 shrink-0" />,
           text: (
             <>
-              <strong>Frontend: </strong> 
-              Using React and TailwindCSS, you’ll get responsive and visually appealing interfaces that enhance user engagement.
+              <strong>Frontend With ReactJs & TailwindCSS: </strong> 
+              You will get responsive and visually appealing interfaces that enhance user engagement.
             </>
           ),
         },
@@ -38,8 +38,8 @@ const MyServiceSection = () => {
           icon: <FaServer className="text-accent w-10 h-10 shrink-0" />,
           text: (
             <>
-              <strong>Backend: </strong> 
-              With ExpressJS, your applications will have scalable and secure APIs, ensuring smooth communication and data flow.
+              <strong>Backend With ExpressJS: </strong> 
+              You will get scalable and secure APIs, guaranteeing smooth server-client communication and data flow.
             </>
           ),
         },
@@ -47,8 +47,8 @@ const MyServiceSection = () => {
           icon: <FaDatabase className="text-accent w-10 h-10 shrink-0" />,
           text: (
             <>
-              <strong>Databases: </strong> 
-              You’ll benefit from optimized SQL queries and PLSQL scripts with PostgreSQL, guaranteeing fast and reliable data management.
+              <strong>Databases With PostgreSQL & Oracle: </strong> 
+              You’ll benefit from optimized SQL & PLSQL scripts, guaranteeing fast and reliable data management.
             </>
           ),
         },
@@ -63,8 +63,8 @@ const MyServiceSection = () => {
           icon: <FaLaptopCode className="text-accent w-10 h-10 shrink-0" />,
           text: (
             <>
-              <strong>Frontend: </strong> 
-              Utilizando React y TailwindCSS, obtendrás interfaces receptivas y visualmente atractivas que mejoran la interacción del usuario.
+              <strong>Frontend con React y TailwindCSS: </strong> 
+              Obtendrás interfaces responsivas y visualmente atractivas que mejoran la interacción del usuario.
             </>
           ),
         },
@@ -72,8 +72,8 @@ const MyServiceSection = () => {
           icon: <FaServer className="text-accent w-10 h-10 shrink-0" />,
           text: (
             <>
-              <strong>Backend: </strong> 
-              Con ExpressJS, tus aplicaciones contarán con APIs escalables y seguras, garantizando una comunicación fluida y segura.
+              <strong>Backend Con ExpressJS: </strong> 
+              Tus aplicaciones contarán con APIs escalables y seguras, garantizando una comunicación cliente-servidor fluida y segura.
             </>
           ),
         },
@@ -81,8 +81,8 @@ const MyServiceSection = () => {
           icon: <FaDatabase className="text-accent w-10 h-10 shrink-0" />,
           text: (
             <>
-              <strong>Bases de Datos: </strong> 
-              Te beneficiarás de consultas SQL optimizadas y scripts PLSQL con PostgreSQL, asegurando una gestión de datos rápida y confiable.
+              <strong>Bases de Datos Con PostgreSQL y Oracle: </strong> 
+              Te beneficiarás de consultas SQL y PLSQL optimizadas, asegurando una gestión de datos rápida y confiable.
             </>
           ),
         },
@@ -94,7 +94,7 @@ const MyServiceSection = () => {
   const { title, description, points } = content[language];
 
   return (
-    <section className="bg-primary flex flex-col md:flex-row-reverse items-center gap-8 px-4 sm:px-6 py-12 sm:py-24 text-white">
+    <section className="relative z-20 bg-primary flex flex-col md:flex-row-reverse items-center gap-8 px-4 sm:px-6 py-12 sm:py-24 text-white">
       {/* Starry Background */}
       {stars.map((_, index) => (
         <motion.div
@@ -109,15 +109,15 @@ const MyServiceSection = () => {
       ))}
       {/* Left Side - Text */}
       <div className="md:w-1/2">
-        <h2 className="text-2xl sm:text-4xl font-bold mb-4">{title}</h2>
-        <p className="text-base sm:text-lg mb-6 text-gray-400">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">{title}</h2>
+        <p className="text-base lg:text-lg mb-6 text-gray-400">
           {description}
         </p>
         <div className="space-y-6 flex flex-col">
           {points.map((point, index) => (
             <div className="flex items-start gap-4" key={index}>
               {point.icon}
-              <p className="text-sm sm:text-base">{point.text}</p>
+              <p className="text-sm lg:text-base">{point.text}</p>
             </div>
           ))}
         </div>

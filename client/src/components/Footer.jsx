@@ -1,62 +1,64 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { useLanguage } from "../context/LanguageContext";
 
 const Footer = () => {
+  // Change this value to "es" for Spanish or "en" for English
+  const { language } = useLanguage()
+
   return (
     <footer className="bg-primary text-white py-12">
-      <div className="container mx-auto px-6">
+      <div className="px-4 sm:px-12">
         {/* Final CTA */}
         <div className="flex flex-col items-center mb-8">
           <h2 className="text-3xl font-bold mb-4 text-center">
-            Ready to take your website to the next level?
+            {language === "en"
+              ? "Interested in working together?"
+              : "¿Interesado en trabajar juntos?"}
           </h2>
           <p className="text-center text-gray-50 mb-6">
-            Get in touch today to discuss your needs and make it happen.
+            {language === "en"
+              ? "Get in touch today to discuss your needs and make it happen."
+              : "Ponte en contacto hoy para hablar sobre tus necesidades y hacerlo realidad."}
           </p>
           <Link
             to="/form"
             className="bg-gradient-to-r from-accent to-blue-400 text-white px-6 py-3 rounded-lg shadow-md hover:scale-105 transition-transform duration-200"
           >
-            Contact Me
+            {language === "en" ? "Contact Me" : "Contáctame"}
           </Link>
         </div>
 
         {/* Links Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+        <div className="flex flex-col md:flex-row md:justify-evenly gap-6 mb-8">
+          <div className="w-full md:w-fit">
+            <h3 className="text-xl font-bold mb-4">
+              {language === "en" ? "Quick Links" : "Enlaces Rápidos"}
+            </h3>
             <ul className="space-y-2">
               <li>
                 <a href="#section1" className="hover:underline">
-                  Section 1
+                  {language === "en" ? "Home" : "Inicio"}
                 </a>
               </li>
               <li>
                 <a href="#section2" className="hover:underline">
-                  Section 2
+                  {language === "en" ? "Curriculum Vitae" : "Curriculum Vitae"}
                 </a>
               </li>
               <li>
                 <a href="#section3" className="hover:underline">
-                  Section 3
+                  {language === "en" ? "Projects" : "Proyectos"}
                 </a>
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Social Media</h3>
+          <div className="w-full md:w-fit">
+            <h3 className="text-xl font-bold mb-4">
+              {language === "en" ? "Social Media" : "Redes Sociales"}
+            </h3>
             <ul className="flex space-x-6">
-              <li>
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-pink-500"
-                >
-                  <FaInstagram size={24} />
-                </a>
-              </li>
               <li>
                 <a
                   href="https://linkedin.com"
@@ -79,20 +81,27 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-xl font-bold mb-4">Get In Touch</h3>
+          <div className="w-full md:w-fit">
+            <h3 className="text-xl font-bold mb-4">
+              {language === "en" ? "Get In Touch" : "Contacto"}
+            </h3>
             <p className="text-gray-200">
-              Email: <a href="mailto:example@mail.com">example@mail.com</a>
+              {language === "en" ? "Email" : "Correo"}:{" "}
+              <a href="mailto:example@mail.com">martinvega2003.02@gmail.com</a>
             </p>
             <p className="text-gray-200">
-              Phone: <a href="tel:+123456789">+1 234 567 89</a>
+              {language === "en" ? "Phone" : "Teléfono"}:{" "}
+              <a href="tel:+123456789">+595 986 537671</a>
             </p>
           </div>
         </div>
 
         {/* Copyright */}
         <div className="text-center border-t border-gray-300 pt-6 text-white">
-          © {new Date().getFullYear()} Your Portfolio Name. All Rights Reserved.
+          © {new Date().getFullYear()} Your Portfolio Name.{" "}
+          {language === "en"
+            ? "All Rights Reserved."
+            : "Todos los Derechos Reservados."}
         </div>
       </div>
     </footer>

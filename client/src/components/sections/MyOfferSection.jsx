@@ -58,7 +58,7 @@ const MyOfferSection = () => {
   const { title, description, benefits } = content[language];
 
   return (
-    <div className={`relative z-10 p-6 md:p-0 ${theme === "dark" ? "text-gray-200" : "text-gray-800"} bg-transparent`}>
+    <div className={`relative z-10 sm:p-6 md:p-0 ${theme === "dark" ? "text-gray-200" : "text-gray-800"} bg-transparent`}>
       <div className="absolute inset-0 opacity-40">
         {/* Starry Background */}
         {Array.from({ length: 25 }).map((_, index) => (
@@ -82,7 +82,7 @@ const MyOfferSection = () => {
       </div>
 
       <div className="flex justify-center md:justify-start items-center md:items-end">
-        <div className={`${theme === "dark" ? "bg-primary/90" : "bg-white/80"} w-[95%] sm:w-[90%] md:max-w-[80%] lg:max-w-[60%] flex flex-col items-start justify-center shadow-2xl rounded-lg border-2 border-primary md:shadow-none md:rounded-none md:border-none`}>
+        <div className={`${theme === "dark" ? "bg-primary/90" : "bg-white/80"} w-full sm:w-[90%] md:max-w-[80%] lg:max-w-[60%] flex flex-col items-start justify-center sm:shadow-2xl sm:rounded-lg border-2 border-primary md:shadow-none md:rounded-none md:border-none`}>
           <div className="min-h-screen w-full flex flex-col justify-center items-start bg-transparent py-12 px-6">
             <p className={`w-full text-sm sm:text-md italic font-light mb-4 ${theme === "dark" ? "text-gray-200 border-cyan-300" : "text-primary border-accent"} border-b-2`}>{language === 'en' ? "My Curriculum Vitae" : "Mi Curriculum Vitae"}</p>
             <div className="max-w-4xl w-full flex flex-col md:flex-row gap-8">

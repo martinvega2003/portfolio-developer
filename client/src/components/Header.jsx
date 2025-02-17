@@ -65,7 +65,7 @@ const Header = () => {
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
-                    {language === "en" ? project.titleEn : project.titleEs}
+                    {language === "en" ? project.title.en : project.title.es}
                   </a>
                 ))}
               </div>
