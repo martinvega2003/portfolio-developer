@@ -86,14 +86,14 @@ const Form = () => {
               placeholder:text-gray-400 outline-none`}
           ></textarea>
         </form>
-        <div className="relative z-20 w-full p-2 flex items-center justify-between gap-6">
+        <div className="relative z-20 w-full p-2 flex items-center justify-between gap-3">
           <button 
-            className={`w-1/3 ${theme === "dark" ? "bg-white text-black hover:text-white border-2 border-white" : "bg-black text-white hover:text-black border-2 border-black"} hover:bg-transparent p-2 rounded-lg transition duration-300`}
+            className={`w-fit sm:w-1/3 ${theme === "dark" ? "bg-white text-black hover:text-white border-2 border-white" : "bg-black text-white hover:text-black border-2 border-black"} hover:bg-transparent p-2 rounded-lg transition duration-300`}
           >
             <Link to="/" className="w-full h-full">{language === "en" ? "Go Back" : "Volver Atras"}</Link>
           </button>
           <button 
-            className="w-1/3 bg-accent hover:bg-transparent text-white hover:text-accent p-2 border-2 border-accent rounded-lg transition duration-300"
+            className="w-fit sm:w-1/3 bg-accent hover:bg-transparent text-white hover:text-accent p-2 border-2 border-accent rounded-lg transition duration-300"
           >
             {language === "en" ? "Send Message" : "Enviar Mensaje"}
           </button>

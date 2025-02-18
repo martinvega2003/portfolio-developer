@@ -25,19 +25,19 @@ export const ProjectCard = ({ project, theme, language }) => {
 							{project.technologies.map((tech, index) => (
 								<div 
 									key={index} 
-									className={"flex items-center text-md hover:scale-110 transition duration-300 text-" + tech.color}
+									className={"flex items-center text-xxs sm:text-sm hover:scale-110 transition duration-300 text-" + tech.color}
 								>
 									<span className="text-md mr-1">{<tech.icon />}</span>
 									<span className="mr-3">{tech.name}</span>
 								</div>
 							))}
 						</div>
-						<div className="mt-4 md:mt-8 flex justify-between items-center gap-4">
+						<div className="mt-4 md:mt-8 flex flex-col sm:flex-row sm:justify-between items-start sm:items-center gap-4">
 							<a 
 								href={project.linkToDeployment} 
 								target="_blank" 
 								rel="noopener noreferrer"
-								className="flex items-center text-white hover:text-accent text-[11px] sm:text-lg px-4 py-1 rounded-full bg-accent hover:bg-transparent border-2 border-accent transition duration-300 cursor-pointer"
+								className="w-fit flex items-center text-white hover:text-accent text-xxs sm:text-base px-4 py-1 rounded-full bg-accent hover:bg-transparent border-2 border-accent transition duration-300 cursor-pointer"
 							>
 								<FaLaptopCode className="mr-1" />
 								{language === "en" ? "View Live" : "Ver en Vivo"}
@@ -47,7 +47,7 @@ export const ProjectCard = ({ project, theme, language }) => {
 								href={project.linkToCode} 
 								target="_blank" 
 								rel="noopener noreferrer"
-								className="flex items-center text-white hover:text-orange-500 text-[11px] sm:text-lg px-4 py-1 rounded-full bg-orange-500 hover:bg-transparent border-2 border-orange-500 transition duration-300 cursor-pointer"
+								className="w-fit flex items-center text-white hover:text-orange-500 text-xxs sm:text-base px-4 py-1 rounded-full bg-orange-500 hover:bg-transparent border-2 border-orange-500 transition duration-300 cursor-pointer"
 							>
 								<SiGithub className="mr-1" />
 								{language === "en" ? "View Code" : "Ver Código"}
