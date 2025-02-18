@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaCertificate, FaGraduationCap, FaShieldAlt } from "react-icons/fa";
-import { DataCard } from '../DataCard';
+import { DataCard } from '../../components/DataCard';
 import { useLanguage } from '../../context/LanguageContext';
 import { useTheme } from '../../context/ThemeContext';
 

@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { Link } from "react-router-dom";
+import axios from "axios"
 
 const Form = () => {
+  const endpoint = ""
+  
   const { language } = useLanguage();
   const { theme } = useTheme();
 
@@ -16,9 +18,10 @@ const Form = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
+      await axios.post(endpoint, formData)
       alert(language === "en" ? "Message sent!" : "¡Mensaje enviado!");
       setFormData({ name: "", email: "", message: "" });
     } else {
@@ -51,11 +54,26 @@ const Form = () => {
           />
         ))}
       </div>
-      <motion.div className="mb-4">
-        <p className={`w-full text-sm italic font-extralight pb-[2px] pl-2 mb-4 ${theme === "dark" ? "text-gray-200" : "text-accent"} border-b-2 border-accent`}>{language === 'en' ? "Send Your Message" : "Envia Tu Mensaje"}</p>
-        <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${theme === "dark" ? "text-white" : "text-primary"} mb-4`}>{title}</h1>
+      <motion.div
+        className="mb-4"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <p className={`w-full text-sm italic font-extralight pb-[2px] pl-2 mb-4 ${theme === "dark" ? "text-gray-200" : "text-accent"} border-b-2 border-accent`}>
+          {language === 'en' ? "Send Your Message" : "Envia Tu Mensaje"}
+        </p>
+        <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${theme === "dark" ? "text-white" : "text-primary"} mb-4`}>
+          {title}
+        </h1>
         <p className={`text-md leading-relaxed ${theme === "dark" ? "text-gray-200" : "text-secondary"}`}>{description}</p>
-        <form onSubmit={handleSubmit} className="relative z-10 w-full mt-4">
+        <motion.form 
+          onSubmit={handleSubmit} 
+          className="relative z-10 w-full mt-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
+        >
           <input 
             type="text" 
             name="name" 
@@ -85,15 +103,17 @@ const Form = () => {
               ${theme === "dark" ? "text-white border-gray-300 focus:border-purple-500 focus:shadow-[0_0_8px_2px] focus:shadow-accent" : "border-primary focus:border-accent focus:shadow-[0_0_8px_2px] focus:shadow-accent"} 
               placeholder:text-gray-400 outline-none`}
           ></textarea>
-        </form>
+        </motion.form>
         <div className="relative z-20 w-full p-2 flex items-center justify-between gap-3">
-          <button 
-            className={`w-fit sm:w-1/3 ${theme === "dark" ? "bg-white text-black hover:text-white border-2 border-white" : "bg-black text-white hover:text-black border-2 border-black"} hover:bg-transparent p-2 rounded-lg transition duration-300`}
+          <Link 
+            to="/" 
+            className={`w-fit sm:w-1/3 ${theme === "dark" ? "bg-white text-black hover:text-white border-2 border-white" : "bg-black text-white hover:text-black border-2 border-black"} text-center hover:bg-transparent p-2 rounded-lg transition duration-300`}
           >
-            <Link to="/" className="w-full h-full">{language === "en" ? "Go Back" : "Volver Atras"}</Link>
-          </button>
+            {language === "en" ? "Go Back" : "Volver Atras"}
+          </Link>
           <button 
             className="w-fit sm:w-1/3 bg-accent hover:bg-transparent text-white hover:text-accent p-2 border-2 border-accent rounded-lg transition duration-300"
+            onClick={handleSubmit}
           >
             {language === "en" ? "Send Message" : "Enviar Mensaje"}
           </button>
@@ -104,5 +124,6 @@ const Form = () => {
 };
 
 export default Form;
+
 
 

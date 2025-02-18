@@ -14,23 +14,6 @@ const HeroSection = () => {
   const [copied, setCopied] = useState(false);
   const myEmail = "martinvega2003.02@gmail.com"
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const moon = document.querySelector(".moon");
-      if (moon) {
-        moon.style.transform = `translate(-50%, calc(-50% + ${
-          scrollPosition * 0.2
-        }px))`;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const handleCopy = () => {
     navigator.clipboard.writeText(myEmail);
     setCopied(true);
@@ -41,7 +24,7 @@ const HeroSection = () => {
 
   return (
     <motion.div
-      className={`w-full h-fit py-40 md:pb-96 transition-all duration-300 overflow-hidden relative ${
+      className={`w-full h-fit py-40 md:pb-96 overflow-hidden relative ${
         theme === "dark"
           ? "bg-gradient-to-b from-secondary to-primary"
           : "bg-gradient-to-r from-blue-400 to-blue-300"
@@ -49,7 +32,7 @@ const HeroSection = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
     >
       {/* Background Animations */}
       {theme === "light" && (
@@ -74,7 +57,12 @@ const HeroSection = () => {
         <div className="w-full flex flex-col md:flex-row justify-start items-center">
           <div className="w-full md:w-1/2 text-center md:text-left mb-9 md:mb-0">
             {/* Email Section */}
-            <div className="flex items-center gap-2 justify-center md:justify-start">
+            <motion.div 
+              className="flex items-center gap-2 justify-center md:justify-start"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
               <span className="text-sm md:text-md text-gray-100 font-semibold">
                 {myEmail}
               </span>
@@ -85,7 +73,7 @@ const HeroSection = () => {
               >
                 <FaCopy />
               </button>
-            </div>
+            </motion.div>
             {copied && (
               <span className="text-xs text-green-400 mt-1 block">
                 Copied!
@@ -93,10 +81,10 @@ const HeroSection = () => {
             )}
 
             <motion.h1
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-extrabold font-heading leading-tight mt-4 relative transition-all duration-300"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-extrabold font-heading leading-tight mt-4 relative"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 }}
+              transition={{ duration: 1 }}
             >
               {language === "en" ? (
                 <>
@@ -130,22 +118,56 @@ const HeroSection = () => {
             </motion.h1>
 
             <motion.p
-              className={`mt-4 text-md lg:text-xl transition-all duration-300 ${
+              className={`mt-4 text-md lg:text-xl ${
                 theme === "dark" ? "text-white" : "text-gray-50"
               }`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              transition={{ duration: 1 }}
             >
               {language === "en"
                 ? "I build React apps with modern technologies like Tailwind CSS and PostgreSQL, delivering on time."
                 : "Creo aplicaciones React con tecnologías modernas como Tailwind CSS y PostgreSQL, entregando a tiempo."}
             </motion.p>
+
+            <motion.div 
+              className="relative z-20 w-full flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center md:justify-start items-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+            >
+              <Link 
+                to="form/"
+                className={`mt-8 w-64 py-3 text-sm md:text-md text-center font-semibold border-2 shadow-lg hover:scale-110 transition duration-200 ${
+                  theme === "dark"
+                    ? "text-primary bg-white hover:bg-transparent hover:text-white border-white"
+                    : "text-accent bg-white hover:bg-transparent hover:text-white border-white"
+                }`}
+              >
+                {language === "en" ? "Work Together" : "Trabajemos"}
+              </Link>
+              <a 
+                key={language}
+                href="#projects"
+                className={`sm:mt-8 w-64 py-3 text-sm md:text-md text-center font-semibold border-2 shadow-lg hover:scale-110 transition duration-200 ${
+                  theme === "dark"
+                    ? "text-white bg-transparent hover:bg-white hover:text-primary border-white"
+                    : "text-white bg-transparent hover:bg-white hover:text-accent border-white"
+                }`}
+              >
+                {language === "en" ? "See My Work" : "Ver Mi Trabajo"}
+              </a>
+            </motion.div>
           </div>
 
-          <div className="w-full md:w-1/2 flex justify-center items-center">
+          <motion.div 
+            className="w-full md:w-1/2 flex justify-center items-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
             <img src={heroImg} alt="Laptops Images" />
-          </div>
+          </motion.div>
         </div>
         {theme === "dark" && (
           <img

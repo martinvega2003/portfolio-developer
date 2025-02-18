@@ -5,7 +5,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 import { ExtraDataSection } from "./ExtraDataSection";
 
-const AboutMe = () => {
+const AboutMeSection = () => {
   const { language } = useLanguage();
   const { theme } = useTheme();
 
@@ -122,7 +122,7 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default AboutMeSection;
 
 
 

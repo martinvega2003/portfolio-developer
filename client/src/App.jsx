@@ -1,9 +1,10 @@
-import Form from './components/form'
+import Form from './pages/form'
 import Header from './components/Header'
-import { MainPage } from './components/mainPage'
+import { MainPage } from './pages/mainPage'
+import Footer from './components/Footer'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/scrollToTop'
-import bgImageUrl from "./images/my-offer-bg.webp"
+import bgImageUrl from "./images/working-bg.webp"
 import { LanguageProvider } from './context/LanguageContext'
 import { ThemeProvider } from './context/ThemeContext'
 
@@ -28,6 +29,7 @@ function App() {
             <Route path='/' element={<MainPage />} />
             <Route path='/form' element={<Form />} />
           </Routes>
+          <Footer />
         </ BrowserRouter>
       </ThemeProvider>
     </LanguageProvider>

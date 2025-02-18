@@ -4,7 +4,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 import { motion } from "framer-motion";
 
-const MyServiceSection = () => {
+const FieldsSection = () => {
   const { language } = useLanguage();
   const { theme } = useTheme();
   
@@ -135,4 +135,4 @@ const MyServiceSection = () => {
   );
 };
 
-export default MyServiceSection;
+export default FieldsSection;

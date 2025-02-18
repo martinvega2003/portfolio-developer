@@ -3,7 +3,7 @@ import { FaUsers, FaBook, FaLightbulb, FaComments, FaChartLine, FaClock } from '
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 
-const BenefitsSection = () => {
+const SoftSkillsSection = () => {
   const { language } = useLanguage();
   const { theme } = useTheme();
 
@@ -161,5 +161,5 @@ const BenefitsSection = () => {
   );
 };
 
-export default BenefitsSection;
+export default SoftSkillsSection;
 

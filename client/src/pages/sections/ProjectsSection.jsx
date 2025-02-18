@@ -3,14 +3,13 @@ import { motion } from "framer-motion";
 import { projectsData as projects } from "../../data/projectsData";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
-import { ProjectCard } from "../ProjectCard";
-
-const ProcessSection = () => {
+import { ProjectCard } from "../../components/ProjectCard";
+const ProjectsSection = () => {
   const { language } = useLanguage();
   const { theme } = useTheme(); // Get the theme from custom hook
 
   return (
-    <div className={`${theme === "dark" ? "bg-black text-white" : "bg-gradient-to-r from-blue-400 to-blue-300 text-white"} pt-48 pb-24 relative`}>
+    <div id="projects" className={`${theme === "dark" ? "bg-black text-white" : "bg-gradient-to-r from-blue-400 to-blue-300 text-white"} pt-48 pb-24 relative`}>
       {/* Background Animations */}
       {theme === "light" && (
         <div className="absolute inset-0 overflow-hidden z-0 pointer-events-none">
@@ -79,5 +78,5 @@ const ProcessSection = () => {
   );
 };
 
-export default ProcessSection;
+export default ProjectsSection;
 

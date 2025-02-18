@@ -1,14 +1,9 @@
 import React from "react";
-import { FaCheckCircle } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
-import cvImgLightModeEn from "../../images/Professional Web Developer Resume no-bg.png"
-import cvImgLightModeEs from "../../images/Professional Web Developer Resume no-bg es.png"
-import cvImgDarkModeEn from "../../images/Professional Web Developer Resume no-bg white-text.png"
-import cvImgDarkModeEs from "../../images/Professional Web Developer Resume no-bg white-text es.png"
 
-const MyOfferSection = () => {
+const CVSection = () => {
   const { language } = useLanguage();
   const { theme } = useTheme();
 
@@ -37,7 +32,7 @@ const MyOfferSection = () => {
       </div>
 
       <div className="flex justify-center md:justify-start items-center md:items-end">
-        <div className={`${theme === "dark" ? "bg-primary/90" : "bg-white/80"} w-full sm:w-[90%] md:max-w-[80%] lg:max-w-[60%] flex flex-col items-start justify-center sm:shadow-2xl sm:rounded-lg border-2 border-primary md:shadow-none md:rounded-none md:border-none`}>
+        <div className={`${theme === "dark" ? "bg-primary/90" : "bg-white/80"} w-full sm:w-[90%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] flex flex-col items-start justify-center sm:shadow-2xl sm:rounded-lg border-2 border-primary md:shadow-none md:rounded-none md:border-none`}>
           <div className="min-h-screen w-full flex flex-col justify-center items-start bg-transparent py-12 px-6">
             <p className={`w-full text-sm italic font-extralight mb-4 ${theme === "dark" ? "text-gray-200 border-cyan-300" : "text-primary border-accent"} border-b-2`}>{language === 'en' ? "My Curriculum Vitae" : "Mi Curriculum Vitae"}</p>
             <div className="max-w-4xl w-full flex flex-col md:flex-row gap-8">
@@ -130,5 +125,5 @@ const MyOfferSection = () => {
   );
 };
 
-export default MyOfferSection;
+export default CVSection;
 
