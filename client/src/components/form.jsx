@@ -52,9 +52,9 @@ const Form = () => {
         ))}
       </div>
       <motion.div className="mb-4">
-        <p className={`text-sm sm:text-md italic font-light mb-4 ${theme === "dark" ? "text-gray-200" : "text-accent"} border-b-2 border-accent`}>{language === 'en' ? "Send Your Message" : "Envia Tu Mensaje"}</p>
-        <h1 className={`text-xl sm:text-3xl xl:text-5xl font-extrabold ${theme === "dark" ? "text-white" : "text-primary"} mb-4`}>{title}</h1>
-        <p className={`text-sm sm:text-md xl:text-lg leading-relaxed ${theme === "dark" ? "text-gray-200" : "text-secondary"}`}>{description}</p>
+        <p className={`w-full text-sm italic font-extralight pb-[2px] pl-2 mb-4 ${theme === "dark" ? "text-gray-200" : "text-accent"} border-b-2 border-accent`}>{language === 'en' ? "Send Your Message" : "Envia Tu Mensaje"}</p>
+        <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${theme === "dark" ? "text-white" : "text-primary"} mb-4`}>{title}</h1>
+        <p className={`text-md leading-relaxed ${theme === "dark" ? "text-gray-200" : "text-secondary"}`}>{description}</p>
         <form onSubmit={handleSubmit} className="relative z-10 w-full mt-4">
           <input 
             type="text" 

@@ -14,6 +14,10 @@ export default {
       fontFamily: {
         heading: ["Inter", "sans-serif"],
       },
+      fontSize: {
+        'xxs': '11px',  // 10px
+        'title': '4rem',     // 64px
+      },
     },
   },
   plugins: [],

@@ -93,7 +93,7 @@ const HeroSection = () => {
             )}
 
             <motion.h1
-              className="text-3xl md:text-4xl lg:text-5xl xl:text-7xl text-white font-extrabold font-heading leading-tight mt-4 relative transition-all duration-300"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-extrabold font-heading leading-tight mt-4 relative transition-all duration-300"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}

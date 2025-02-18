@@ -23,33 +23,33 @@ const MyServiceSection = () => {
     en: {
       title: "How I Can Help You",
       description:
-        "Your projects deserve seamless user experiences, efficient back-end systems, and reliable database solutions. Here are my skills in these fields:",
+        "Your projects deserve seamless user experiences, efficient back-end systems, and reliable database solutions. Whatever you are looking for, here are my skills in these fields:",
       points: [
         {
           icon: <FaLaptopCode className="text-accent w-10 h-10 shrink-0" />,
           text: (
-            <>
-              <strong>Frontend With ReactJs & TailwindCSS: </strong> 
+            <p className="text-gray-200">
+              <strong className="text-white">Frontend With ReactJs & TailwindCSS: </strong> 
               You will get responsive and visually appealing interfaces that enhance user engagement.
-            </>
+            </p>
           ),
         },
         {
           icon: <FaServer className="text-accent w-10 h-10 shrink-0" />,
           text: (
-            <>
-              <strong>Backend With ExpressJS: </strong> 
+            <p className="text-gray-200">
+              <strong className="text-white">Backend With ExpressJS: </strong> 
               You will get scalable and secure APIs, guaranteeing smooth server-client communication and data flow.
-            </>
+            </p>
           ),
         },
         {
           icon: <FaDatabase className="text-accent w-10 h-10 shrink-0" />,
           text: (
-            <>
-              <strong>Databases With PostgreSQL & Oracle: </strong> 
+            <p className="text-gray-200">
+              <strong className="text-white">Databases With PostgreSQL & Oracle: </strong> 
               You’ll benefit from optimized SQL & PLSQL scripts, guaranteeing fast and reliable data management.
-            </>
+            </p>
           ),
         },
       ],
@@ -62,28 +62,28 @@ const MyServiceSection = () => {
         {
           icon: <FaLaptopCode className="text-accent w-10 h-10 shrink-0" />,
           text: (
-            <>
-              <strong>Frontend con React y TailwindCSS: </strong> 
+            <p className="text-gray-200">
+              <strong className="text-white">Frontend con React y TailwindCSS: </strong> 
               Obtendrás interfaces responsivas y visualmente atractivas que mejoran la interacción del usuario.
-            </>
+            </p>
           ),
         },
         {
           icon: <FaServer className="text-accent w-10 h-10 shrink-0" />,
           text: (
-            <>
-              <strong>Backend Con ExpressJS: </strong> 
+            <p className="text-gray-200">
+              <strong className="text-white">Backend Con ExpressJS: </strong> 
               Tus aplicaciones contarán con APIs escalables y seguras, garantizando una comunicación cliente-servidor fluida y segura.
-            </>
+            </p>
           ),
         },
         {
           icon: <FaDatabase className="text-accent w-10 h-10 shrink-0" />,
           text: (
-            <>
-              <strong>Bases de Datos Con PostgreSQL y Oracle: </strong> 
-              Te beneficiarás de consultas SQL y PLSQL optimizadas, asegurando una gestión de datos rápida y confiable.
-            </>
+            <p className="text-gray-200">
+              <strong className="text-white">Bases de Datos Con PostgreSQL y Oracle: </strong> 
+              Te ofrezco de consultas SQL y PLSQL optimizadas, asegurando una gestión de datos rápida y confiable.
+            </p>
           ),
         },
       ],
@@ -109,15 +109,15 @@ const MyServiceSection = () => {
       ))}
       {/* Left Side - Text */}
       <div className="md:w-1/2">
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">{title}</h2>
-        <p className="text-base lg:text-lg mb-6 text-gray-400">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4">{title}</h2>
+        <p className="text-base sm:text-lg mb-6 text-gray-200">
           {description}
         </p>
         <div className="space-y-6 flex flex-col">
           {points.map((point, index) => (
             <div className="flex items-start gap-4" key={index}>
               {point.icon}
-              <p className="text-sm lg:text-base">{point.text}</p>
+              <p className="text-sm sm:text-base">{point.text}</p>
             </div>
           ))}
         </div>

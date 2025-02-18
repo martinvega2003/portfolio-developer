@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { projectsData as projects } from "../../data/projectsData";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import { ProjectCard } from "../ProjectCard";
 
 const ProcessSection = () => {
@@ -33,8 +32,10 @@ const ProcessSection = () => {
       )}
       
       <div className="px-6 relative z-10">
-        <h2 className="text-4xl font-semibold text-center">
-          {language === "en" ? "See Some Of My Projects" : "Mira Algunos De Mis Proyectos"}
+        <h2 key={language} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center">
+          {language === "en"
+            ? "See Some Of My Projects"
+            : "Mira Algunos De Mis Proyectos"}
         </h2>
 
         {/* Timeline & Cards */}

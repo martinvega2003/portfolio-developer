@@ -22,8 +22,8 @@ export const DataCard = ({icon: Icon, title, text}) => {
         }}
     >
         <Icon size={50} className="mb-2" />
-        <h2 className="text-lg lg:text-xl font-bold md:text-center">{title}</h2>
-        <p className="text-sm lg:text-base md:text-center text-light mt-3 md:mt-6">"{text}"</p>
+        <h2 className="text-lg sm:text-xl font-bold md:text-center">{title}</h2>
+        <p className="text-sm sm:text-base md:text-center text-light mt-3">"{text}"</p>
     </motion.div>
   )
 }

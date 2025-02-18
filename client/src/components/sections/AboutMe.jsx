@@ -37,10 +37,10 @@ const AboutMe = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <p className={`w-full py-1 mb-2 ${theme === "dark" ? "text-gray-300" : "text-secondary"} font-light italic text-sm border-b-2`}>
+              <p className={`w-full py-1 mb-2 ${theme === "dark" ? "text-gray-300" : "text-secondary"} font-extralight italic text-sm border-b-2`}>
                 {language === "en" ? "Let me introduce myself" : "Permíteme presentarme"}
               </p>
-              <h1 className={`text-2xl sm:text-5xl md:text-3xl lg:text-4xl xl:text-6xl font-bold ${theme === "dark" ? "text-white" : "text-primary"}`}>
+              <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold ${theme === "dark" ? "text-white" : "text-primary"}`}>
                 {language === "en" ? "Hi, I'm Martin Vega" : "Hola, soy Martin Vega"}
               </h1>
             </motion.div>
@@ -52,7 +52,7 @@ const AboutMe = () => {
               <p>
                 {language === "en" 
                   ? "I'm a passionate web developer and computer science student, specializing in building modern, efficient, and high-performance web solutions that cater to various needs."
-                  : "Soy un desarrollador web apasionado y estudiante de informática, especializado en la creación de soluciones web modernas, eficientes y de alto rendimiento para satisfacer diversas necesidades."
+                  : "Soy un desarrollador web apasionado y estudiante de informática, enfocado en la creación de soluciones web modernas, eficientes y de alto rendimiento para satisfacer diversas necesidades."
                 }
               </p>
               <p className="mt-3">
@@ -90,7 +90,7 @@ const AboutMe = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
         >
-          <h2 className="text-3xl font-semibold">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             {language === "en"
               ? "Skills & Tech"
               : "Habilidades y Tecnología"}

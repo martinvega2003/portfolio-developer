@@ -16,7 +16,7 @@ const BenefitsSection = () => {
         {
           title: "Team Collaboration",
           description:
-            "I actively engage with team members, communicate clearly, and contribute to a positive and productive work environment.",
+            "I actively focus in engaging with team members, communicate clearly, and contribute to a positive and productive work environment.",
           icon: <FaUsers size={40} />,
         },
         {
@@ -28,13 +28,13 @@ const BenefitsSection = () => {
         {
           title: "Problem-Solving",
           description:
-            "I approach challenges with creativity and logic, ensuring efficient solutions that enhance productivity and project success.",
+            "I approach challenges with creativity and logic, focusing myself on efficient solutions that enhance productivity and project success.",
           icon: <FaLightbulb size={40} />,
         },
         {
           title: "Communication Skills",
           description:
-            "I communicate ideas clearly and listen actively, ensuring effective collaboration and understanding within the team.",
+            "I always look for clear communication of ideas and active listening, ensuring effective collaboration and understanding within the team.",
           icon: <FaComments size={40} />,
         },
         {
@@ -59,7 +59,7 @@ const BenefitsSection = () => {
         {
           title: "Colaboración en Equipo",
           description:
-            "Me involucro activamente con los miembros del equipo, me comunico con claridad y contribuyo a un entorno de trabajo positivo y productivo.",
+            "Me enfoco en involucrarme activamente con los miembros del equipo, me comunico con claridad y contribuyo a un entorno de trabajo positivo y productivo.",
           icon: <FaUsers size={40} />,
         },
         {
@@ -71,19 +71,19 @@ const BenefitsSection = () => {
         {
           title: "Resolución de Problemas",
           description:
-            "Enfrento los desafíos con creatividad y lógica, asegurando soluciones eficientes que mejoran la productividad y el éxito del proyecto.",
+            "Enfrento los desafíos con creatividad y lógica, enfocandome en idear soluciones eficientes que mejoran la productividad y el éxito del proyecto.",
           icon: <FaLightbulb size={40} />,
         },
         {
           title: "Habilidades de Comunicación",
           description:
-            "Comunico ideas de manera clara y escucho activamente, garantizando una colaboración y entendimiento efectivos dentro del equipo.",
+            "Siempre busco comunicar mis ideas de manera clara y escucho activamente, garantizando una colaboración y entendimiento efectivos dentro del equipo.",
           icon: <FaComments size={40} />,
         },
         {
-          title: "Proactividad y Motivación Propia",
+          title: "Proactividad y Motivación",
           description:
-            "Tomo la iniciativa y me mantengo motivado para contribuir a los objetivos del equipo y mejorar procesos sin requerir supervisión constante.",
+            "Tomo la iniciativa y me motivo para contribuir a los objetivos del equipo y mejorar procesos sin requerir supervisión constante.",
           icon: <FaChartLine size={40} />,
         },
         {
@@ -126,8 +126,8 @@ const BenefitsSection = () => {
         )}
       </div>
       <div className="relative max-w-6xl mx-auto px-6 text-center z-10 flex flex-col items-center">
-        <h2 className={`text-xl sm:text-4xl font-bold ${theme === "dark" ? "text-white" : "text-accent"} mb-6`}>{title}</h2>
-        <p className={`w-3/5 text-md sm:text-lg ${theme === "dark" ? "text-gray-200" : "text-gray-600"} mb-12`}>{description}</p>
+        <h2 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl ${theme === "dark" ? "text-white" : "text-accent"} mb-6`}>{title}</h2>
+        <p className={`w-3/5 text-md ${theme === "dark" ? "text-gray-200" : "text-gray-600"} mb-12`}>{description}</p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <div
@@ -148,7 +148,7 @@ const BenefitsSection = () => {
                 {skill.title}
               </h3>
               <p
-                className="text-secondary group-hover:text-white 
+                className="text-md text-secondary group-hover:text-white 
                 transition-colors duration-300"
               >
                 {skill.description}
