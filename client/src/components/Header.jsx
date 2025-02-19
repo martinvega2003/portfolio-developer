@@ -35,28 +35,28 @@ const Header = () => {
         <div className={`absolute ${theme === "dark" ? "bg-primary" : "bg-white"} w-full left-0 sm:w-fit sm:bg-gradient-to-r sm:from-transparent sm:to-transparent sm:relative ${isMenuOpen ? "translate-y-32 sm:translate-y-0" : "-translate-y-full sm:translate-y-0"} rounded-xl sm:top-0 py-6 sm:py-0 flex flex-col sm:flex-row justify-start items-center gap-3 sm:gap-0 sm:space-x-6 transition-all duration-300`}>
           <a
             href="/"
-            className={`relative group text-lg transition-all transform hover:scale-105 ${theme === "dark" ? "text-white" : "text-primary"} hover:text-accent`}
+            className={`relative group text-lg transform hover:scale-110 ${theme === "dark" ? "text-white" : "text-primary"} hover:text-accent transition duration-300`}
           >
             {language === "en" ? "Home" : "Inicio"}
             <span className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
           <a
             href="#about"
-            className={`relative group text-lg transition-all transform hover:scale-105 ${theme === "dark" ? "text-white" : "text-primary"} hover:text-accent`}
+            className={`relative group text-lg transform hover:scale-110 ${theme === "dark" ? "text-white" : "text-primary"} hover:text-accent transition duration-300`}
           >
             {language === "en" ? "About" : "Sobre mi"}
             <span className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
           <a
             href='#projects'
-            className={`relative group cursor-pointer text-lg ${theme === "dark" ? "text-white" : "text-primary"} hover:text-accent`}
+            className={`relative group cursor-pointer text-lg ${theme === "dark" ? "text-white" : "text-primary"} hover:text-accent hover:scale-110 transition duration-300`}
             onMouseEnter={() => setIsExamplesOpen(true)}
             onMouseLeave={() => setIsExamplesOpen(false)}
           >
             {language === "en" ? "Projects" : "Proyectos"}
             <span className="absolute left-1/2 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
             {isExamplesOpen && (
-              <div className={`absolute w-[160px] top-full left-0 ${theme === "dark" ? "bg-primary text-white" : "bg-white text-primary"} text-primary shadow-lg py-2`}>
+              <div className={`absolute w-[160px] top-full left-0 ${theme === "dark" ? "bg-primary text-white" : "bg-white text-primary"} text-primary rounded-xl shadow-lg py-2`}>
                 {projectsData.map(project => (
                   <a
                     key={project.title}

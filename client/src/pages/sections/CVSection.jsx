@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
+import CVEnglishPath from "../../data/Martin Vega - Web Developer - CV.pdf"
+import CVSpanishPath from "../../data/Martin Vega - Desarrollador Web - CV.pdf"
 
 const CVSection = () => {
   const { language } = useLanguage();
@@ -33,7 +35,7 @@ const CVSection = () => {
 
       <div className="flex justify-center md:justify-start items-center md:items-end">
         <div className={`${theme === "dark" ? "bg-primary/90" : "bg-white/80"} w-full sm:w-[90%] md:max-w-[80%] lg:max-w-[70%] xl:max-w-[60%] flex flex-col items-start justify-center sm:shadow-2xl sm:rounded-lg border-2 border-primary md:shadow-none md:rounded-none md:border-none`}>
-          <div className="min-h-screen w-full flex flex-col justify-center items-start bg-transparent py-12 px-6">
+          <div className="relative z-20 min-h-screen w-full flex flex-col justify-center items-start bg-transparent py-12 px-6">
             <p className={`w-full text-sm italic font-extralight mb-4 ${theme === "dark" ? "text-gray-200 border-cyan-300" : "text-primary border-accent"} border-b-2`}>{language === 'en' ? "My Curriculum Vitae" : "Mi Curriculum Vitae"}</p>
             <div className="max-w-4xl w-full flex flex-col md:flex-row gap-8">
               {/* Left Section - Profile and Contact Info */}
@@ -106,16 +108,20 @@ const CVSection = () => {
               </div>
             </div>
             <div className="relative z-10 w-full py-8 flex items-center justify-between gap-4">
-              <button 
-                className={`w-fit sm:w-1/3 ${theme === "dark" ? "bg-white text-black hover:text-white border-2 border-white" : "bg-black text-white hover:text-black border-2 border-black"} text-md hover:bg-transparent py-2 px-4 rounded-lg transition duration-300`}
+              <a 
+                href={CVEnglishPath}
+                download={CVEnglishPath}
+                className={`w-fit sm:w-1/3 ${theme === "dark" ? "bg-white text-black hover:text-white border-2 border-white" : "bg-black text-white hover:text-black border-2 border-black"} text-md text-center hover:bg-transparent py-2 px-4 rounded-lg transition duration-300`}
               >
                 Download CV In English
-              </button>
-              <button 
-                className={`w-fit sm:w-1/3 ${theme === "dark" ? "bg-cyan-300 text-primary hover:text-cyan-300 border-cyan-300" : "bg-accent text-white hover:text-accent border-accent"} text-md hover:bg-transparent py-2 px-4  border-2 rounded-lg transition duration-300`}
+              </a>
+              <a 
+                href={CVSpanishPath}
+                download={CVSpanishPath}
+                className={`w-fit sm:w-1/3 ${theme === "dark" ? "bg-cyan-300 text-primary hover:text-cyan-300 border-cyan-300" : "bg-accent text-white hover:text-accent border-accent"} text-md text-center hover:bg-transparent py-2 px-4  border-2 rounded-lg transition duration-300`}
               >
                 Descargar CV En Español
-              </button>
+              </a>
             </div>
           </div>
         </div>
