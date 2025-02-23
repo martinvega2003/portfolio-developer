@@ -4,6 +4,7 @@ import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 import CVEnglishPath from "../../data/Martin Vega - Web Developer - CV.pdf"
 import CVSpanishPath from "../../data/Martin Vega - Desarrollador Web - CV.pdf"
+import professionalPic from "../../images/professional-pic.jpeg"
 
 const CVSection = () => {
   const { language } = useLanguage();
@@ -39,8 +40,14 @@ const CVSection = () => {
             <p className={`w-full text-sm italic font-extralight mb-4 ${theme === "dark" ? "text-gray-200 border-cyan-300" : "text-primary border-accent"} border-b-2`}>{language === 'en' ? "My Curriculum Vitae" : "Mi Curriculum Vitae"}</p>
             <div className="max-w-4xl w-full flex flex-col md:flex-row gap-8">
               {/* Left Section - Profile and Contact Info */}
-              <div className="w-full md:w-1/2">
-                <div className="bg-gray-800 rounded-xl w-full md:w-2/3 aspect-square mb-6"></div>
+              <div className="w-full md:w-1/2">         
+                <div className="w-full md:w-2/3 aspect-square mb-6">
+                  <img
+                    src={professionalPic || "https://via.placeholder.com/200"}
+                    alt="Martin Vega"
+                    className={`w-full h-auto border-2 ${theme === "dark" ? "border-purple-500" : "border-primary"} rounded-xl`}
+                  />
+                </div>
                 <div className={`${theme === "dark" ? "text-cyan-300 border-cyan-300" : "text-accent border-accent"} text-xl font-bold border-l-4 pl-4`}>{language === "en" ? "Contact Info" : "Contacto"}</div>
                 <ul className={`${theme === "dark" ? "text-white" : "text-primary"} text-md mt-2 space-y-2`}>
                   <li>📞 +555 555 555555</li>

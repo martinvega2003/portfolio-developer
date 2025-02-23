@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import professionalPic from "../../images/professional-pic-transparent.png";
 import { useLanguage } from "../../context/LanguageContext";
 import { useTheme } from "../../context/ThemeContext";
 import { ExtraDataSection } from "./ExtraDataSection";
+import professionalPic from "../../images/professional-pic.jpeg"
 
 const AboutMeSection = () => {
   const { language } = useLanguage();
@@ -21,7 +21,7 @@ const AboutMeSection = () => {
       <div className="w-full flex flex-col items-center">
         {/* About Me Text Section */}
         <motion.div
-          className={`w-fit mx-3 sm:mx-12 flex flex-col items-center md:flex-row-reverse md:justify-around my-12 ${theme === "dark" ? "bg-primary shadow-[0_10px_30px_10px_rgba(139,92,246,0.6)]" : "bg-transparent"} `}
+          className={`w-fit mx-3 sm:mx-12 flex flex-col items-center md:items-start md:flex-row-reverse md:justify-around my-12 ${theme === "dark" ? "bg-primary shadow-[0_10px_30px_10px_rgba(139,92,246,0.6)]" : "bg-transparent"} `}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
@@ -72,7 +72,7 @@ const AboutMeSection = () => {
             viewport={{ once: true }}
           >
             <img
-              src={"https://via.placeholder.com/200"}
+              src={professionalPic || "https://via.placeholder.com/200"}
               alt="Martin Vega"
               className={`relative z-10 w-full h-auto rounded-xl border-2 ${theme === "dark" ? "border-purple-500" : "border-primary"} `}
             />
